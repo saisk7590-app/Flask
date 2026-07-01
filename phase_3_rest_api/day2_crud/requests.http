@@ -1,0 +1,141 @@
+###############################################################
+# PHASE 3 - DAY 2
+# CRUD Operations
+# Task Manager REST API
+###############################################################
+
+@baseUrl = http://127.0.0.1:5000
+
+###############################################################
+# HOME
+###############################################################
+
+### Home
+GET {{baseUrl}}/
+
+###############################################################
+# GET - ALL TASKS
+###############################################################
+
+### Get All Tasks
+GET {{baseUrl}}/tasks
+
+###############################################################
+# GET - TASK BY ID
+###############################################################
+
+### Get Task ID = 1
+GET {{baseUrl}}/tasks/1
+
+###
+
+### Get Task ID = 2
+GET {{baseUrl}}/tasks/2
+
+###
+
+### Get Task ID = 100 (Not Found)
+GET {{baseUrl}}/tasks/100
+
+###############################################################
+# POST - CREATE TASK
+###############################################################
+
+### Create Task 1
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+    "title": "Learn CRUD",
+    "status": "Pending"
+}
+
+###
+
+### Create Task 2
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+    "title": "Build Flask API",
+    "status": "Pending"
+}
+
+###
+
+### Create Task 3
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+    "title": "Practice REST APIs",
+    "status": "Completed"
+}
+
+###############################################################
+# GET AGAIN (Verify New Tasks)
+###############################################################
+
+### Get All Tasks
+GET {{baseUrl}}/tasks
+
+###############################################################
+# PUT - UPDATE TASK
+###############################################################
+
+### Update Task ID = 1
+PUT {{baseUrl}}/tasks/1
+Content-Type: application/json
+
+{
+    "title": "Master Flask",
+    "status": "Completed"
+}
+
+###
+
+### Update Task ID = 3
+PUT {{baseUrl}}/tasks/3
+Content-Type: application/json
+
+{
+    "title": "Practice CRUD APIs",
+    "status": "Completed"
+}
+
+###
+
+### Update Task ID = 100 (Not Found)
+PUT {{baseUrl}}/tasks/100
+Content-Type: application/json
+
+{
+    "title": "Unknown",
+    "status": "Pending"
+}
+
+###############################################################
+# GET AGAIN (Verify Updates)
+###############################################################
+
+### Get All Tasks
+GET {{baseUrl}}/tasks
+
+###############################################################
+# DELETE TASK
+###############################################################
+
+### Delete Task ID = 2
+DELETE {{baseUrl}}/tasks/2
+
+###
+
+### Delete Task ID = 100 (Not Found)
+DELETE {{baseUrl}}/tasks/100
+
+###############################################################
+# FINAL CHECK
+###############################################################
+
+### Get All Tasks
+GET {{baseUrl}}/tasks

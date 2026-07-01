@@ -1,0 +1,82 @@
+###############################################################
+# PHASE 3 - DAY 3
+# Status Codes & Error Responses
+###############################################################
+
+@baseUrl = http://127.0.0.1:5000
+
+###############################################################
+# 200 OK
+###############################################################
+
+### Success Response
+GET {{baseUrl}}/success
+
+###
+
+###############################################################
+# 201 CREATED
+###############################################################
+
+### Resource Created
+POST {{baseUrl}}/created
+
+###
+
+###############################################################
+# 400 BAD REQUEST
+###############################################################
+
+### Empty Request Body
+POST {{baseUrl}}/bad-request
+Content-Type: application/json
+
+{}
+
+###
+
+### Missing Name Field
+POST {{baseUrl}}/bad-request
+Content-Type: application/json
+
+{
+    "age": 22
+}
+
+###
+
+### Valid Request
+POST {{baseUrl}}/bad-request
+Content-Type: application/json
+
+{
+    "name": "Sai Kiran"
+}
+
+###
+
+###############################################################
+# 404 NOT FOUND
+###############################################################
+
+### Student Found
+GET {{baseUrl}}/students/1
+
+###
+
+### Student Found
+GET {{baseUrl}}/students/2
+
+###
+
+### Student Not Found
+GET {{baseUrl}}/students/100
+
+###
+
+###############################################################
+# 500 INTERNAL SERVER ERROR
+###############################################################
+
+### Internal Server Error Demo
+GET {{baseUrl}}/server-error

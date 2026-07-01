@@ -1,0 +1,62 @@
+###########################################################
+# PHASE 3 - DAY 1
+# REST API Fundamentals
+#
+# Test these requests using the VS Code REST Client extension.
+###########################################################
+
+### Home API
+GET http://127.0.0.1:5000/
+
+###
+
+### Get All Tasks (Collection Resource)
+GET http://127.0.0.1:5000/tasks
+
+###
+
+### Get Task by ID = 1 (Single Resource)
+GET http://127.0.0.1:5000/tasks/1
+
+###
+
+### Get Task by ID = 2
+GET http://127.0.0.1:5000/tasks/2
+
+###
+
+### Get Task by ID = 100 (Not Found)
+GET http://127.0.0.1:5000/tasks/100
+
+###########################################################
+# POST REQUEST
+###########################################################
+
+### Create Task (Placeholder)
+POST http://127.0.0.1:5000/tasks
+Content-Type: application/json
+
+{
+    "title": "Learn REST APIs",
+    "status": "Pending"
+}
+
+###########################################################
+# PUT REQUEST
+###########################################################
+
+### Update Task 1 (Placeholder)
+PUT http://127.0.0.1:5000/tasks/1
+Content-Type: application/json
+
+{
+    "title": "Master REST APIs",
+    "status": "Completed"
+}
+
+###########################################################
+# DELETE REQUEST
+###########################################################
+
+### Delete Task 1 (Placeholder)
+DELETE http://127.0.0.1:5000/tasks/1
