@@ -1,0 +1,137 @@
+###############################################################
+# PHASE 3 - DAY 4
+# Expense Tracker API
+###############################################################
+
+@baseUrl = http://127.0.0.1:5000
+
+### Home
+GET {{baseUrl}}/
+
+###
+
+### Get All Expenses
+GET {{baseUrl}}/expenses
+
+###
+
+### Get Expense By ID
+GET {{baseUrl}}/expenses/1
+
+###
+
+### Get Invalid Expense
+GET {{baseUrl}}/expenses/999
+
+###
+
+### Create Expense
+POST {{baseUrl}}/expenses
+Content-Type: application/json
+
+{
+    "amount": 850,
+    "category": "Shopping",
+    "description": "Shoes",
+    "payment_method": "Credit Card"
+}
+
+###
+
+### Create Expense - Empty Body
+POST {{baseUrl}}/expenses
+Content-Type: application/json
+
+{}
+
+###
+
+### Create Expense - Missing Amount
+POST {{baseUrl}}/expenses
+Content-Type: application/json
+
+{
+    "category": "Food",
+    "description": "Lunch",
+    "payment_method": "UPI"
+}
+
+###
+
+### Create Expense - Missing Category
+POST {{baseUrl}}/expenses
+Content-Type: application/json
+
+{
+    "amount": 200,
+    "description": "Lunch",
+    "payment_method": "UPI"
+}
+
+###
+
+### Create Expense - Missing Description
+POST {{baseUrl}}/expenses
+Content-Type: application/json
+
+{
+    "amount": 200,
+    "category": "Food",
+    "payment_method": "UPI"
+}
+
+###
+
+### Create Expense - Missing Payment Method
+POST {{baseUrl}}/expenses
+Content-Type: application/json
+
+{
+    "amount": 200,
+    "category": "Food",
+    "description": "Lunch"
+}
+
+###
+
+### Update Expense
+PUT {{baseUrl}}/expenses/1
+Content-Type: application/json
+
+{
+    "amount": 300,
+    "category": "Food",
+    "description": "Dinner",
+    "payment_method": "Cash"
+}
+
+###
+
+### Update Invalid Expense
+PUT {{baseUrl}}/expenses/999
+Content-Type: application/json
+
+{
+    "amount": 300,
+    "category": "Food",
+    "description": "Dinner",
+    "payment_method": "Cash"
+}
+
+###
+
+### Update Expense - Empty Body
+PUT {{baseUrl}}/expenses/1
+Content-Type: application/json
+
+{}
+
+###
+
+### Delete Expense
+DELETE {{baseUrl}}/expenses/2
+
+###
+
+### Delete Invalid Expense
+DELETE {{baseUrl}}/expenses/999

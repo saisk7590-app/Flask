@@ -1,0 +1,152 @@
+###############################################################
+# PHASE 3 - DAY 5
+# Notes API + API Organization
+###############################################################
+
+@baseUrl = http://127.0.0.1:5000
+
+###############################################################
+# HOME
+###############################################################
+
+### Home
+GET {{baseUrl}}/
+
+###
+
+###############################################################
+# GET ALL NOTES
+###############################################################
+
+### Get All Notes
+GET {{baseUrl}}/notes
+
+###
+
+###############################################################
+# GET NOTE BY ID
+###############################################################
+
+### Get Note ID = 1
+GET {{baseUrl}}/notes/1
+
+###
+
+### Get Note ID = 100 (Not Found)
+GET {{baseUrl}}/notes/100
+
+###
+
+###############################################################
+# POST - CREATE NOTE
+###############################################################
+
+### Create Note
+POST {{baseUrl}}/notes
+Content-Type: application/json
+
+{
+    "title": "Flask API",
+    "content": "Learning helper functions",
+    "created_date": "2026-07-05"
+}
+
+###
+
+### Create Note - Empty Body
+POST {{baseUrl}}/notes
+Content-Type: application/json
+
+{}
+
+###
+
+### Create Note - Missing Title
+POST {{baseUrl}}/notes
+Content-Type: application/json
+
+{
+    "content": "REST APIs",
+    "created_date": "2026-07-05"
+}
+
+###
+
+### Create Note - Missing Content
+POST {{baseUrl}}/notes
+Content-Type: application/json
+
+{
+    "title": "Python",
+    "created_date": "2026-07-05"
+}
+
+###
+
+### Create Note - Missing Created Date
+POST {{baseUrl}}/notes
+Content-Type: application/json
+
+{
+    "title": "Python",
+    "content": "Practice daily"
+}
+
+###
+
+###############################################################
+# PUT - UPDATE NOTE
+###############################################################
+
+### Update Note ID = 1
+PUT {{baseUrl}}/notes/1
+Content-Type: application/json
+
+{
+    "title": "Updated Flask",
+    "content": "CRUD Completed",
+    "created_date": "2026-07-06"
+}
+
+###
+
+### Update Note ID = 100 (Not Found)
+PUT {{baseUrl}}/notes/100
+Content-Type: application/json
+
+{
+    "title": "Unknown",
+    "content": "No Note",
+    "created_date": "2026-07-06"
+}
+
+###
+
+### Update Note - Empty Body
+PUT {{baseUrl}}/notes/1
+Content-Type: application/json
+
+{}
+
+###
+
+###############################################################
+# DELETE NOTE
+###############################################################
+
+### Delete Note ID = 2
+DELETE {{baseUrl}}/notes/2
+
+###
+
+### Delete Note ID = 100 (Not Found)
+DELETE {{baseUrl}}/notes/100
+
+###
+
+###############################################################
+# FINAL VERIFICATION
+###############################################################
+
+### Get All Notes
+GET {{baseUrl}}/notes
