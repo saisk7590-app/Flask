@@ -1,0 +1,46 @@
+### Home
+GET http://127.0.0.1:5000/
+
+###
+
+### Get All Students
+GET http://127.0.0.1:5000/students
+
+###
+
+### Get Student by ID (Exists)
+GET http://127.0.0.1:5000/students/3
+
+###
+
+### Get Student by ID (Not Found)
+GET http://127.0.0.1:5000/students/100
+
+###
+
+### Add Student
+POST http://127.0.0.1:5000/students
+Content-Type: application/json
+
+{
+    "name": "Ramesh",
+    "age": 24,
+    "course": "Django"
+}
+
+###
+
+### Update Student
+PUT http://127.0.0.1:5000/students/2
+Content-Type: application/json
+
+{
+    "name": "Rahul",
+    "age": 25,
+    "course": "Flutter Advanced 1.2"
+}
+
+###
+
+### Delete Student
+DELETE http://127.0.0.1:5000/students/6
