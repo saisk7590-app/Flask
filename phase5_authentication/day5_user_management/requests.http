@@ -1,0 +1,48 @@
+### Home
+GET http://127.0.0.1:5000/
+
+###
+
+### Register
+POST http://127.0.0.1:5000/register
+Content-Type: application/json
+
+{
+    "username": "Sai",
+    "email": "sai@gmail.com",
+    "password": "hello123"
+}
+
+###
+
+### Login
+POST http://127.0.0.1:5000/login
+Content-Type: application/json
+
+{
+    "email": "sai@gmail.com",
+    "password": "hello123"
+}
+
+###
+
+### Get Profile
+GET http://127.0.0.1:5000/profile
+Authorization: Bearer PASTE_YOUR_TOKEN_HERE
+
+###
+
+### Update Profile
+PUT http://127.0.0.1:5000/profile
+Authorization: Bearer PASTE_YOUR_TOKEN_HERE
+Content-Type: application/json
+
+{
+    "username": "Sai Kiran"
+}
+
+###
+
+### Delete Account
+DELETE http://127.0.0.1:5000/account
+Authorization: Bearer PASTE_YOUR_TOKEN_HERE

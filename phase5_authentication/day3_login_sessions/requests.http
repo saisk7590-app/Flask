@@ -1,0 +1,29 @@
+User
+   │
+   ▼
+Enter Email + Password
+   │
+   ▼
+POST /login
+   │
+   ▼
+Validate Input
+   │
+   ▼
+Find User by Email
+   │
+   ▼
+User Exists?
+ ┌──────┴──────┐
+ │             │
+No            Yes
+ │             │
+ ▼             ▼
+401      bcrypt.checkpw()
+               │
+         ┌─────┴─────┐
+         │           │
+      False        True
+         │           │
+         ▼           ▼
+401      200 Login Successful
