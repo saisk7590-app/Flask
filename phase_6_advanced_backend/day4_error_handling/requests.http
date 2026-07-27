@@ -1,0 +1,63 @@
+### 200 OK
+GET http://127.0.0.1:5000/
+
+###
+
+### 200 OK
+GET http://127.0.0.1:5000/expenses
+
+###
+
+### 201 CREATED
+POST http://127.0.0.1:5000/expenses
+Content-Type: application/json
+
+{
+    "title": "Food",
+    "amount": 250,
+    "category": "Food"
+}
+
+###
+
+### 400 - Missing Title
+POST http://127.0.0.1:5000/expenses
+Content-Type: application/json
+
+{
+    "title": "",
+    "amount": 250,
+    "category": "Food"
+}
+
+###
+
+### 400 - Negative Amount
+POST http://127.0.0.1:5000/expenses
+Content-Type: application/json
+
+{
+    "title": "Food",
+    "amount": -100,
+    "category": "Food"
+}
+
+###
+
+### 404 - Route Not Found
+GET http://127.0.0.1:5000/unknown
+
+###
+
+### 404 - Custom Expense Not Found
+GET http://127.0.0.1:5000/expenses/100
+
+###
+
+### 500 - Internal Server Error
+GET http://127.0.0.1:5000/test500
+
+###
+
+### 500 - Database Error
+GET http://127.0.0.1:5000/expenses?simulate=db

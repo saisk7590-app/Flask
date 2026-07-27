@@ -1,0 +1,48 @@
+### Home
+GET http://127.0.0.1:5000/
+
+###
+
+### Valid Student
+POST http://127.0.0.1:5000/students
+Content-Type: application/json
+
+{
+    "name": "Sai",
+    "age": 22,
+    "course": "Python"
+}
+
+###
+
+### Missing Name
+POST http://127.0.0.1:5000/students
+Content-Type: application/json
+
+{
+    "age": 22,
+    "course": "Python"
+}
+
+###
+
+### Invalid Age
+POST http://127.0.0.1:5000/students
+Content-Type: application/json
+
+{
+    "name": "Rahul",
+    "age": -5,
+    "course": "Flask"
+}
+
+###
+
+### Missing Course
+POST http://127.0.0.1:5000/students
+Content-Type: application/json
+
+{
+    "name": "Priya",
+    "age": 21
+}
