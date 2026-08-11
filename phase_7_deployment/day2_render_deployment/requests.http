@@ -1,20 +1,8 @@
-### Home
+### Production root endpoint
+GET https://flask-ic61.onrender.com/
 
-GET http://127.0.0.1:5000/
+### Production health check
+GET https://flask-ic61.onrender.com/health
 
-### Get All Tasks
-
-GET http://127.0.0.1:5000/tasks
-
-### Create Task
-
-POST http://127.0.0.1:5000/tasks
-Content-Type: application/json
-
-{
-"title": "Test deployed API"
-}
-
-### Get Tasks Again
-
-GET http://127.0.0.1:5000/tasks
+### Test missing endpoint
+GET https://flask-ic61.onrender.com/does-not-exist
