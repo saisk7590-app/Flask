@@ -1,189 +1,108 @@
-# Day 1 — Deployment Preparation Checklist
+# 🚀 Deployment Readiness Checklist
 
-## 🎯 Goal
+Use this checklist before deploying a Flask application.
 
-Prepare the Flask backend project for GitHub and deployment.
+## 1. Project Structure
 
----
+* [ ] Project contains only necessary files
+* [ ] Application entry point is clearly identified
+* [ ] Temporary files have been removed
+* [ ] Debug files and local artifacts have been removed
+* [ ] Project structure is easy to understand
 
-# 1. Project Preparation
+## 2. Python Dependencies
 
-* [ ] Select the Flask project to deploy
-* [ ] Confirm the project runs locally
-* [ ] Check the project folder structure
-* [ ] Remove unnecessary files
-* [ ] Confirm the Flask application starts successfully
+* [ ] `requirements.txt` exists
+* [ ] Required packages are listed
+* [ ] Unnecessary dependencies are not included
+* [ ] Dependencies install successfully with:
 
----
-
-# 2. Python Dependencies
-
-* [ ] Create `requirements.txt`
-* [ ] Add Flask
-* [ ] Add Gunicorn
-* [ ] Verify required packages
-* [ ] Test installing dependencies using:
-
-```bash
+```powershell
 pip install -r requirements.txt
 ```
 
----
+## 3. Git Configuration
 
-# 3. Git Configuration
+* [ ] Git repository has been initialized
+* [ ] `git status` works correctly
+* [ ] `.gitignore` exists
+* [ ] Virtual environment is ignored
+* [ ] Python cache files are ignored
+* [ ] `.env` is ignored
 
-* [ ] Create `.gitignore`
-* [ ] Ignore `__pycache__/`
-* [ ] Ignore virtual environments
-* [ ] Ignore `.env`
-* [ ] Ignore database files if they are local-only
-* [ ] Check that sensitive files are not tracked
+## 4. Security
 
----
+* [ ] No passwords are hardcoded
+* [ ] No API keys are hardcoded
+* [ ] No database credentials are hardcoded
+* [ ] No secret keys are committed
+* [ ] `.env` is not committed
+* [ ] Sensitive configuration will use environment variables
 
-# 4. README Documentation
+## 5. Flask Configuration
 
-* [ ] Add project name
-* [ ] Add project description
-* [ ] Add technologies used
-* [ ] Add installation instructions
-* [ ] Add how to run the application
-* [ ] Add API endpoints
-* [ ] Add basic project information
+* [ ] Application runs successfully locally
+* [ ] API endpoints have been tested
+* [ ] Development/debug configuration is understood
+* [ ] Production configuration is planned
+* [ ] Production server requirements are understood
 
----
+## 6. Documentation
 
-# 5. Local Testing
+* [ ] `README.md` exists
+* [ ] Project purpose is documented
+* [ ] Installation instructions are documented
+* [ ] Run instructions are documented
+* [ ] API endpoints are documented
+* [ ] Required environment variables will be documented
 
-* [ ] Activate virtual environment
-* [ ] Install requirements
-* [ ] Start Flask application
-* [ ] Test API endpoints
-* [ ] Confirm there are no errors
-* [ ] Confirm the application works before pushing
+## 7. Git Commit
 
-Example:
+* [ ] `git status` has been reviewed
+* [ ] Required files have been staged
+* [ ] Commit message clearly describes the changes
+* [ ] Commit completes successfully
+* [ ] Working tree is clean after committing
 
-```bash
-python app.py
-```
+## 8. GitHub
 
----
+* [ ] GitHub repository exists
+* [ ] Local repository is connected to the correct remote
+* [ ] `origin` points to the correct repository
+* [ ] `main` branch is being used
+* [ ] Latest commit has been pushed
+* [ ] Repository contents have been verified on GitHub
 
-# 6. Git Repository
+## 9. Final Verification
 
-Initialize Git:
+Run:
 
-```bash
-git init
-```
-
-Check repository status:
-
-```bash
+```powershell
 git status
 ```
 
-Add project files:
-
-```bash
-git add .
-```
-
-Create the first commit:
-
-```bash
-git commit -m "Prepare Flask API for deployment"
-```
-
----
-
-# 7. GitHub Repository
-
-* [ ] Create a GitHub repository
-* [ ] Choose a suitable repository name
-* [ ] Add the GitHub remote
-* [ ] Verify the remote URL
-
-Example:
-
-```bash
-git remote add origin <repository-url>
-```
-
----
-
-# 8. Push Project to GitHub
-
-Push the project:
-
-```bash
-git push -u origin main
-```
-
-* [ ] Confirm push succeeds
-* [ ] Open the GitHub repository
-* [ ] Confirm project files are visible
-* [ ] Confirm `.env` is not visible
-* [ ] Confirm virtual environment is not visible
-* [ ] Confirm README is displayed correctly
-
----
-
-# 9. Final Verification
-
-The repository should contain:
+Expected:
 
 ```text
-project/
-│
-├── app.py
-├── requirements.txt
-├── README.md
-└── .gitignore
+nothing to commit, working tree clean
 ```
 
-And should NOT contain:
+Verify the repository contains:
 
 ```text
-.env
-venv/
-.venv/
-__pycache__/
-*.db
+app.py
+requirements.txt
+README.md
+.gitignore
 ```
 
----
+## ✅ Day 1 Completion
 
-# ✅ Day 1 Completion Criteria
+The project is ready to continue to the deployment stage when:
 
-Day 1 is complete when:
-
-* [ ] Flask API runs locally
-* [ ] Dependencies are documented
-* [ ] `.gitignore` is configured
-* [ ] README is available
-* [ ] Git repository is initialized
-* [ ] Initial commit is created
-* [ ] GitHub repository is created
-* [ ] Code is pushed to GitHub
-* [ ] No secrets are exposed
-* [ ] Repository is ready for deployment
-
----
-
-# 🚀 Next Step
-
-After completing this checklist:
-
-```text
-Day 1
-GitHub & Deployment Preparation
-        ↓
-Day 2
-Render Deployment
-        ↓
-Gunicorn + WSGI
-        ↓
-Live Flask API
-```
+* Git repository is clean
+* GitHub repository is synchronized
+* Dependencies are documented
+* Secrets are protected
+* Documentation is complete
+* Flask API works locally
