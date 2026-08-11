@@ -1,0 +1,20 @@
+### Home
+
+GET http://127.0.0.1:5000/
+
+### Get All Tasks
+
+GET http://127.0.0.1:5000/tasks
+
+### Create Task
+
+POST http://127.0.0.1:5000/tasks
+Content-Type: application/json
+
+{
+"title": "Test deployed API"
+}
+
+### Get Tasks Again
+
+GET http://127.0.0.1:5000/tasks
