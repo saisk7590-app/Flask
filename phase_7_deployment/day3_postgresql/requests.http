@@ -1,0 +1,45 @@
+### Health Check
+GET http://127.0.0.1:5000/
+
+
+### Get All Students
+GET http://127.0.0.1:5000/students
+
+
+### Create Student
+POST http://127.0.0.1:5000/students
+Content-Type: application/json
+
+{
+    "name": "Sai",
+    "email": "sai@example.com",
+    "age": 23,
+    "course": "Backend Development"
+}
+
+
+### Get Students After Creating
+GET http://127.0.0.1:5000/students
+
+
+### Test Duplicate Email
+POST http://127.0.0.1:5000/students
+Content-Type: application/json
+
+{
+    "name": "Another Sai",
+    "email": "sai@example.com",
+    "age": 25,
+    "course": "Flask"
+}
+
+
+### Test Missing Name
+POST http://127.0.0.1:5000/students
+Content-Type: application/json
+
+{
+    "email": "missingname@example.com",
+    "age": 22,
+    "course": "Python"
+}
