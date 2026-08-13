@@ -1,0 +1,44 @@
+### ============================================
+### DAY 4 — API TESTING
+### Local vs Production
+### ============================================
+
+
+### 1. Local Health Check
+
+GET http://127.0.0.1:5000/health
+
+
+### 2. Production Health Check
+
+GET https://flask-ic61.onrender.com/health
+
+
+### 3. Local Root Endpoint
+
+GET http://127.0.0.1:5000/
+
+
+### 4. Production Root Endpoint
+
+GET https://flask-ic61.onrender.com/
+
+
+### 5. Local Invalid Route — 404 Test
+
+GET http://127.0.0.1:5000/does-not-exist
+
+
+### 6. Production Invalid Route — 404 Test
+
+GET https://flask-ic61.onrender.com/does-not-exist
+
+
+### 7. Local Wrong HTTP Method — 405 Test
+
+POST http://127.0.0.1:5000/health
+
+
+### 8. Production Wrong HTTP Method — 405 Test
+
+POST https://flask-ic61.onrender.com/health
