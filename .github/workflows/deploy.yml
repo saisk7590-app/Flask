@@ -25,7 +25,8 @@ jobs:
         run: pip install -r phase_7_deployment/day5_cicd/requirements.txt
 
       - name: Run tests
-        run: python -m pytest phase_7_deployment/day5_cicd/tests
+        working-directory: phase_7_deployment/day5_cicd
+        run: python -m pytest
 
       - name: Show project files
         run: ls phase_7_deployment/day5_cicd
