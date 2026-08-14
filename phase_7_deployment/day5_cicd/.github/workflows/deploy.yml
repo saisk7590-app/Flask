@@ -1,4 +1,4 @@
-name: Flask API CI
+name: Flask API CI/CD
 
 on:
   push:
@@ -9,12 +9,31 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: phase_7_deployment/day5_cicd
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
       - name: Show Python version
         run: python --version
 
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        run: python -m pytest
+
       - name: Show project files
         run: ls
+
+      - name: Deploy to Render
+        run: |
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
