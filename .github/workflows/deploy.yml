@@ -1,4 +1,4 @@
-name: Flask API CI
+name: Flask API CI/CD
 
 on:
   push:
@@ -30,3 +30,7 @@ jobs:
 
       - name: Show project files
         run: ls phase_7_deployment/day5_cicd
+
+      - name: Deploy to Render
+        run: |
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
